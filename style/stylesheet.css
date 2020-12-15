@@ -1,0 +1,991 @@
+/* Generelt*/
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: black;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 15px; 
+}
+
+h3{
+  font-size: clamp(16px, 18px, 20px);
+  color:white;
+  text-align: center;
+  margin-top:10%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+h4{
+  font-size: clamp(16px, 18px, 20px);
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+p{
+  font-size: clamp(12px, 14px, 16px);
+  line-height: 1.6;
+}
+
+a{ font-size: clamp(12px, 14px, 16px);
+  text-decoration: none;
+  color:white;
+}
+
+.image > div {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* overordnet grid*/
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto 1fr 1fr 0.1fr;
+  grid-template-areas:
+  "header"
+  "main"
+  "content"
+  "om"
+  "kontakt"
+  "footer"
+}
+
+/*navigation*/
+
+.logo {
+  max-width: 25%;
+}
+
+header {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  grid-area: header;
+}
+
+header ul {
+  margin:0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  
+}
+
+
+header ul a {
+  color:white;
+  display:block;
+  padding: 20px;
+  padding-left: 12%;
+  text-decoration: none;
+}
+
+header ul a:hover {
+  color:#006165;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+header .logo {
+  float:left;
+  display: block;
+  padding-left: 10%;
+  padding-top:13px;
+}
+
+header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+header .menu-icon {
+  padding: 28px 20px;
+  margin-right: 6%;
+  position: relative;
+  float:right;
+  cursor:pointer;
+}
+
+header .menu-icon .nav-icon {
+  background: white;
+  display: block;
+  height: 1px;
+  width: 18px;
+  position: relative;
+}
+
+header .menu-icon .nav-icon:before {
+  background: white;
+  content:"";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+ 
+  top:5px;
+}
+header .menu-icon .nav-icon:after {
+  background: white;
+  content:"";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:-5px;
+}
+
+
+header .menu-btn {
+  display:none;
+}
+
+header .menu-btn:checked ~ .menu {
+  max-height:240px;
+}
+
+header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform:rotate(-45deg);
+  top:0;
+}
+
+header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+  transform:rotate(45deg);
+  top:0;
+  
+}
+
+
+
+
+
+/*Landingpage*/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background: url("../billeder/fototilmobil.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-position:right bottom;
+  background-color: black;
+  grid-area: main;
+}
+main > .landing-text {
+  padding-top: 200px;
+}
+
+.landing-text > h1 {
+  padding-bottom: 5px;
+}
+
+.landing-text {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.button {
+  text-align: center;
+  background-color: #161616;
+  width:150px;
+  height: 30px;
+  text-align: center;
+  display:block;
+  transition:.3s;
+  padding-top:15px;
+  cursor:pointer;
+  margin: 0 auto;
+}
+
+  
+
+.button:hover {
+  background-color: #006165;
+  font-size:12px;
+} 
+
+/*indhold*/
+
+.content {
+  background-color: #161616;
+  background-attachment: fixed;
+  grid-area: content;
+}
+
+/*image grid*/
+.image {
+  display: grid;
+  margin:10%;
+  gap: 25px;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "picture1" "picture2" "picture3" "picture4" "picture5" "picture6";
+  grid-template-rows: auto;
+}
+
+
+
+.image > div:first-child {
+  margin-top: 25px;
+}
+.image > div:last-child {
+  margin-bottom: 25px;
+}
+
+
+.picture1 {
+  grid-area: picture1;
+}
+.picture2 {
+  grid-area: picture2;
+}
+.picture3 {
+  grid-area: picture3;
+}
+.picture4 {
+  grid-area: picture4;
+}
+.picture5 {
+  grid-area: picture5;
+}
+.picture6 {
+  grid-area: picture6;
+}
+
+.image > div {
+  position:relative;
+  
+}
+.img__description_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  visibility: visible;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/*om mig side*/
+.om {
+color:white;
+ height:auto;
+ width:80%;
+ justify-self:center;
+ gap:45px;
+ grid-area:om;
+ display:grid;
+ grid-template-columns: 1fr;
+justify-content: center;
+background-color: black;
+}
+
+.omoverskrift {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+.portrætvideo {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; 
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.omtekst {
+  color:white;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  text-align: center;
+  margin-bottom:10%;
+}
+
+
+
+
+/*kontakt*/
+
+
+
+.kontakt {
+  color:white;
+  display: flex;
+  flex-direction:column;
+  background: url("../billeder/tabletkontakt.png");
+  background-attachment: fixed;
+  background-size:100%;
+  background-repeat: no-repeat;
+  grid-area: kontakt;
+  align-items: center;
+
+  
+}
+
+.kontakttekst{
+  flex:2;
+  margin:10%;
+  text-align: center;
+}
+
+.kontaktoverskrift {
+  margin-bottom:10px;
+}
+
+
+
+#mailknap {
+  margin-bottom: 250px;
+  width: 200px;
+}
+
+#mailknap:hover {
+  background-color:#006165;
+  font-size: 12px;
+}
+
+
+
+
+/*footer*/
+
+footer {
+  background-color: black;
+  grid-area: footer;
+  display:flex;
+  flex-direction: row;
+}
+
+#tekst_f{
+  margin-top:20px;
+  margin-left:10%;
+  flex:2; 
+  color:grey;
+}
+
+#tekst_f >p {
+  font-size:10px;
+}
+
+.soicons{
+  margin-top:20px;
+  flex:1;
+  text-align: right;
+  margin-right:10%;
+
+}
+
+.soicons > a > i{
+font-size:20px;
+color:grey;
+padding-right:20px;
+
+}
+
+/* produkt.html*/
+
+.wrapper {
+  height: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+  "header"
+  "indhold"
+  "bottom"
+  "footer"
+
+}
+
+/*navigation*/
+
+
+#portfolio_h {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  grid-area: header;
+}
+
+#portfolio_h  ul {
+  margin:0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  
+}
+
+
+#portfolio_h  ul a {
+  color:black;
+  display:block;
+  padding: 20px;
+  padding-left: 12%;
+  text-decoration: none;
+}
+
+#portfolio_h  ul a:hover {
+  color:#006165;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+#portfolio_h  .logo {
+  float:left;
+  display: block;
+  padding-left: 10%;
+  padding-top:13px;
+}
+
+#portfolio_h  .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+#portfolio_h  .menu-icon {
+  padding: 28px 20px;
+  margin-right: 6%;
+  position: relative;
+  float:right;
+  cursor:pointer;
+}
+
+#portfolio_h  .menu-icon .nav-icon {
+  background: black;
+  display: block;
+  height: 1px;
+  width: 18px;
+  position: relative;
+
+}
+
+#portfolio_h  .menu-icon .nav-icon:before {
+  background: black;
+  content:"";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  top:5px;
+}
+#portfolio_h  .menu-icon .nav-icon:after {
+  background: black;
+  content:"";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:-5px;
+}
+
+
+#portfolio_h  .menu-btn {
+  display:none;
+}
+
+#portfolio_h  .menu-btn:checked ~ .menu {
+  max-height:240px;
+}
+
+#portfolio_h .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+#portfolio_h .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform:rotate(-45deg);
+  top:0;
+}
+
+#portfolio_h  .menu-btn:checked ~ .menu-icon .nav-icon:after{
+  transform:rotate(45deg);
+  top:0;
+  
+}
+
+.indhold{
+  grid-area: indhold;
+  background-color: white;
+  width:80%;
+  justify-self:center;
+  display:grid;
+  grid-template-columns: 1fr;
+ justify-content: center;
+ gap:unset;
+  }
+
+  #overskrift_p {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    text-align: center;
+    margin-top:20%;
+    margin-bottom:10%;
+    color:black;
+  }
+  
+  #produkt_p {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  #tekst_p {
+    color:black;
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    text-align: center;
+    margin-bottom:10%;
+  }
+
+  .knap {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+  
+  }
+
+.bottom{
+    grid-area:bottom;
+  }
+
+
+#tilbage:hover {
+  background-color: #006165;
+  font-size: 12px;
+}
+
+
+#footer_p {
+margin-top:5%;
+margin-bottom:5%;
+background-color: white;
+
+}
+
+
+
+/*tablet*/
+@media screen and  (min-width:600px) {
+
+  /* Generelt tablet*/
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3{
+  font-size: clamp(20px, 22px, 24px);
+}
+
+h4{
+  font-size: clamp(20px, 22px, 24px);
+}
+
+p{
+  font-size: clamp(16px, 18px, 20px);
+  line-height: 1.6;
+}
+
+  
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr 1fr 0.1fr;
+    
+  }
+  
+  header li{
+    float:left;
+  }
+  header li a{
+    padding:20px 30px;
+  }
+  
+  header .menu{
+    clear:none;
+    float:left;
+    max-height:none;
+  }
+  
+  header .menu-icon{
+    display: none;
+    
+  }
+  
+  .logo {
+    max-width: 10%;
+  }
+  
+  main {
+    background: url("../billeder/forsidetablet.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-position:right bottom;
+    background-color: black;
+  }
+  
+  
+  .landing-text {
+    color: white;
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  
+
+  
+  #forsidebtn {
+    width: 200px;
+    margin-left: 10%;
+    
+  }
+  
+  
+  
+  
+  /*indhold tablet*/
+  
+  .image {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "picture1 picture2" "picture3 picture4" "picture5 picture6";
+  }
+  .image > div:first-child {
+    margin-top: unset;
+  }
+  .image > div:last-child {
+    margin-bottom: unset;
+  }
+  /*om mig side tablet*/
+  
+  .om {
+    height:auto;
+  }
+
+
+  /*kontakt tablet*/
+
+  .kontakt {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+  }
+  
+  .kontakttekst{
+    flex:2;
+    margin:10%;
+  }
+  
+  .kontaktoverskrift {
+    margin-bottom:10px;
+  }
+  
+  
+  #mailknap {
+    flex:1;
+    padding-top:15px;
+    padding-left:5px;
+    width: 600px;
+    margin:10%;
+    
+  }
+  
+  
+/*produkt.html tablet*/
+
+
+
+  #portfolio_h .menu{
+    clear: none;
+    float: right;
+    max-height: none;
+    margin-right: 10%;
+  }
+
+  #portfolio_h ul a{
+     font-size: 16px;
+     padding-left:unset;
+  }
+
+  .indhold {
+    justify-self:center;
+    display:grid;
+    gap:2em;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    margin-top:10%;
+ }
+    
+  #produkt_p {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+    
+  #overskrift_p {
+   grid-column: 2 / 3;
+   grid-row: 2 / 3;
+   text-align: left;
+   margin-top: 0; 
+  }
+    
+    
+  #tekst_p {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    text-align:left;
+  }
+  
+  .knap {
+    grid-column: 2/3;
+    grid-row: 4 / 5;
+    Justify-self: end;
+  }
+
+}
+
+/*website*/
+@media screen and (min-width:992px) {
+
+ /* Generelt website*/
+
+  h1 {
+    font-size: 90px;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+
+  h3{
+    font-size: clamp(26px, 28px, 30px);
+  }
+  
+  h4{
+    font-size: clamp(26px, 28px, 30px);
+  }
+  
+  p{
+    font-size:16px;
+  }
+
+
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url("../billeder/fototilforside.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-position:right bottom;
+    background-color: black;
+    grid-area: main;
+  }
+  
+  
+  /*navigation website*/
+  header li a{
+    padding:20px 30px;
+    font-size: 20px;
+  }
+  
+  
+  /*forside website*/
+  
+  .landing-text > h1 {
+    padding-bottom: 3px;
+  }
+  
+  .landing-text {
+    margin-bottom: 20px;
+  }
+  
+
+  
+  #btn {
+    width: 200px;
+    height:50px;
+    font-size: 15px; 
+
+  }
+  
+  
+  
+  /*indhold website*/
+  
+  .image {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "picture1 picture2 picture3"
+    "picture4 picture5 picture6";
+  }
+  
+  .image > div {
+    position:relative;
+    
+  }
+  
+  .img__description_layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
+    visibility: visible;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .1s, visibility .1s;
+  }
+  
+  .image > div:hover .img__description_layer {
+    visibility:hidden;
+  }
+  .image > div:hover{
+    cursor: pointer;
+  }
+  
+  .image > div .img__description {
+    transition: .2s;
+    transform: translateY(1em);
+  }
+  
+  .image > div:hover .img__description {
+    transition: .2s ease-out;
+    transform: translateY(0);
+  }
+  
+  /*om mig side website*/
+
+  
+
+  .om {
+    height:100vh;
+    width:80%;
+    justify-self:center;
+    gap:45px;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 60px 10px auto;
+    justify-content: center;
+  }
+    
+    
+    
+  .portrætvideo {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    
+  }
+    
+  .responsive-iframe {
+    height: 50%
+  }
+    
+  .omoverskrift {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 40px;
+    text-align: left;
+    margin-top: 0;
+  }
+
+
+  .omoverskrift > h3 {
+    margin-top:unset;
+    text-align:start;
+  }
+
+    
+  .omtekst {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    text-align:left;
+  }
+
+
+
+  /*kontakt*/ 
+
+  .kontakt {
+  background: url("../billeder/kontakt.png");
+  background-attachment: fixed;
+  background-size:100%;
+  background-repeat: no-repeat;
+  }
+
+
+  /*produkt.html*/
+
+  #portfolio_h ul a{
+    font-size: 20px;
+   
+ }
+}
+
+
+
+
