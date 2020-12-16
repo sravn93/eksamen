@@ -7,7 +7,7 @@
 body {
   background-color: black;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -20,8 +20,8 @@ h2 {
   font-size: 15px; 
 }
 
-h3{
-  font-size: clamp(16px, 18px, 20px);
+h3 {
+  font-size: 18px;
   color:white;
   text-align: center;
   margin-top:10%;
@@ -29,18 +29,19 @@ h3{
   word-break: break-all;
 }
 
-h4{
-  font-size: clamp(16px, 18px, 20px);
+h4 {
+  font-size: 18px;
   word-wrap: break-word;
   word-break: break-all;
 }
 
-p{
-  font-size: clamp(12px, 14px, 16px);
+p {
+  font-size: 14px;
   line-height: 1.6;
 }
 
-a{ font-size: clamp(12px, 14px, 16px);
+a { 
+  font-size:14px;
   text-decoration: none;
   color:white;
 }
@@ -70,10 +71,11 @@ img {
   "footer"
 }
 
-/*navigation*/
+/*navigation, lavet ved hjælp af https://www.youtube.com/watch?v=sjrp1FEHnyA&t=1917s*/
 
 .logo {
   max-width: 25%;
+  margin-right:30px;
 }
 
 header {
@@ -88,10 +90,8 @@ header ul {
   margin:0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
-  
+  overflow: hidden; 
 }
-
 
 header ul a {
   color:white;
@@ -103,7 +103,6 @@ header ul a {
 
 header ul a:hover {
   color:#006165;
-  font-size: 25px;
   cursor: pointer;
   transition: 0.6s;
 }
@@ -144,9 +143,9 @@ header .menu-icon .nav-icon:before {
   height: 100%;
   width: 100%;
   position: absolute;
- 
   top:5px;
 }
+
 header .menu-icon .nav-icon:after {
   background: white;
   content:"";
@@ -156,7 +155,6 @@ header .menu-icon .nav-icon:after {
   position: absolute;
   top:-5px;
 }
-
 
 header .menu-btn {
   display:none;
@@ -183,8 +181,6 @@ header .menu-btn:checked ~ .menu-icon .nav-icon:after{
 
 
 
-
-
 /*Landingpage*/
 main {
   display: flex;
@@ -199,6 +195,7 @@ main {
   background-color: black;
   grid-area: main;
 }
+
 main > .landing-text {
   padding-top: 200px;
 }
@@ -228,13 +225,12 @@ main > .landing-text {
 }
 
   
-
 .button:hover {
   background-color: #006165;
-  font-size:12px;
 } 
 
 /*indhold*/
+
 
 .content {
   background-color: #161616;
@@ -242,18 +238,26 @@ main > .landing-text {
   grid-area: content;
 }
 
+#porttekst{
+  color:white;
+  text-align:center;
+  margin-left:20%;
+  margin-right:20%;
+  padding-top:20px;
+}
+
 /*image grid*/
 .image {
   display: grid;
   margin:10%;
-  gap: 25px;
+  gap:25px;
   align-items: center;
   grid-template-columns: 1fr;
   grid-template-areas: "picture1" "picture2" "picture3" "picture4" "picture5" "picture6";
   grid-template-rows: auto;
 }
 
-
+/* laves for at fikse problem med margin top og bottom*/
 
 .image > div:first-child {
   margin-top: 25px;
@@ -306,13 +310,13 @@ main > .landing-text {
 /*om mig side*/
 .om {
 color:white;
- height:auto;
- width:80%;
- justify-self:center;
- gap:45px;
- grid-area:om;
- display:grid;
- grid-template-columns: 1fr;
+height:auto;
+width:80%;
+justify-self:center;
+gap:45px;
+grid-area:om;
+display:grid;
+grid-template-columns: 1fr;
 justify-content: center;
 background-color: black;
 }
@@ -349,10 +353,7 @@ background-color: black;
 }
 
 
-
-
 /*kontakt*/
-
 
 
 .kontakt {
@@ -364,9 +365,7 @@ background-color: black;
   background-size:100%;
   background-repeat: no-repeat;
   grid-area: kontakt;
-  align-items: center;
-
-  
+  align-items: center 
 }
 
 .kontakttekst{
@@ -379,8 +378,6 @@ background-color: black;
   margin-bottom:10px;
 }
 
-
-
 #mailknap {
   margin-bottom: 250px;
   width: 200px;
@@ -388,9 +385,7 @@ background-color: black;
 
 #mailknap:hover {
   background-color:#006165;
-  font-size: 12px;
 }
-
 
 
 
@@ -403,7 +398,7 @@ footer {
   flex-direction: row;
 }
 
-#tekst_f{
+#tekst_f {
   margin-top:20px;
   margin-left:10%;
   flex:2; 
@@ -414,19 +409,17 @@ footer {
   font-size:10px;
 }
 
-.soicons{
+.soicons {
   margin-top:20px;
   flex:1;
   text-align: right;
   margin-right:10%;
-
 }
 
-.soicons > a > i{
+.soicons > a > i {
 font-size:20px;
-color:grey;
+color:#818181;
 padding-right:20px;
-
 }
 
 /* produkt.html*/
@@ -442,10 +435,9 @@ padding-right:20px;
   "indhold"
   "bottom"
   "footer"
-
 }
 
-/*navigation*/
+/*navigation, laves igen, for at løse problem med navigationen og der er væsentlige ændringer*/
 
 
 #portfolio_h {
@@ -471,11 +463,11 @@ padding-right:20px;
   padding: 20px;
   padding-left: 12%;
   text-decoration: none;
+  
 }
 
 #portfolio_h  ul a:hover {
   color:#006165;
-  font-size: 25px;
   cursor: pointer;
   transition: 0.6s;
 }
@@ -561,41 +553,40 @@ padding-right:20px;
   justify-self:center;
   display:grid;
   grid-template-columns: 1fr;
- justify-content: center;
- gap:unset;
-  }
+  justify-content: center;
+  gap:unset;
+}
 
-  #overskrift_p {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    text-align: center;
-    margin-top:20%;
-    margin-bottom:10%;
-    color:black;
-  }
+#overskrift_p {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  text-align: center;
+  margin-top:20%;
+  margin-bottom:10%;
+  color:black;
+}
   
-  #produkt_p {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-  }
+#produkt_p {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
 
-  #tekst_p {
-    color:black;
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-    text-align: center;
-    margin-bottom:10%;
-  }
+#tekst_p {
+  color:black;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  text-align: center;
+  margin-bottom:10%;
+}
 
-  .knap {
-    grid-column: 1 / -1;
-    grid-row: 4 / 5;
-  
-  }
+.knap {
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+}
 
-.bottom{
-    grid-area:bottom;
-  }
+.bottom {
+  grid-area:bottom;
+}
 
 
 #tilbage:hover {
@@ -605,10 +596,9 @@ padding-right:20px;
 
 
 #footer_p {
-margin-top:5%;
-margin-bottom:5%;
-background-color: white;
-
+  margin-top:5%;
+  margin-bottom:5%;
+  background-color: white;
 }
 
 
@@ -618,52 +608,50 @@ background-color: white;
 
   /* Generelt tablet*/
 
-h1 {
-  font-size: 70px;
-}
+  h1 {
+   font-size: 70px;
+  }
 
-h2 {
-  font-size: 20px;
-}
+  h2 {
+   font-size: 20px;
+  }
 
-h3{
-  font-size: clamp(20px, 22px, 24px);
-}
+  h3 {
+    font-size: 22px;
+  }
 
-h4{
-  font-size: clamp(20px, 22px, 24px);
-}
+  h4 {
+   font-size: 22px;
+  }
 
-p{
-  font-size: clamp(16px, 18px, 20px);
-  line-height: 1.6;
-}
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
 
-  
+
   .container {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto 1fr 1fr 0.1fr;
-    
   }
   
-  header li{
+  header li {
     float:left;
   }
-  header li a{
+  header li a {
     padding:20px 30px;
   }
   
-  header .menu{
+  header .menu {
     clear:none;
     float:left;
     max-height:none;
   }
   
-  header .menu-icon{
+  header .menu-icon {
     display: none;
-    
   }
   
   .logo {
@@ -689,19 +677,21 @@ p{
     margin-bottom: 20px;
   }
   
-  
 
-  
   #forsidebtn {
     width: 200px;
-    margin-left: 10%;
-    
+    margin-left: 10%; 
   }
   
   
   
   
   /*indhold tablet*/
+
+  #porttekst{
+    margin-left:30%;
+    margin-right:30%;
+  }
   
   .image {
     grid-template-columns: 1fr 1fr;
@@ -719,7 +709,6 @@ p{
     height:auto;
   }
 
-
   /*kontakt tablet*/
 
   .kontakt {
@@ -728,7 +717,7 @@ p{
     align-items: center;
   }
   
-  .kontakttekst{
+  .kontakttekst {
     flex:2;
     margin:10%;
   }
@@ -751,7 +740,6 @@ p{
 /*produkt.html tablet*/
 
 
-
   #portfolio_h .menu{
     clear: none;
     float: right;
@@ -762,6 +750,7 @@ p{
   #portfolio_h ul a{
      font-size: 16px;
      padding-left:unset;
+     padding: 20px 30px;
   }
 
   .indhold {
@@ -801,10 +790,10 @@ p{
 
 }
 
-/*website*/
-@media screen and (min-width:992px) {
+  /*website*/
+  @media screen and (min-width:992px) {
 
- /* Generelt website*/
+  /* Generelt website*/
 
   h1 {
     font-size: 90px;
@@ -814,20 +803,19 @@ p{
     font-size: 30px;
   }
 
-  h3{
-    font-size: clamp(26px, 28px, 30px);
+  h3 {
+    font-size: 28px;
   }
   
-  h4{
-    font-size: clamp(26px, 28px, 30px);
+  h4 {
+    font-size: 28px;
   }
   
-  p{
+  p {
     font-size:16px;
   }
 
 
-  
   main {
     display: flex;
     flex-direction: column;
@@ -848,8 +836,7 @@ p{
     padding:20px 30px;
     font-size: 20px;
   }
-  
-  
+
   /*forside website*/
   
   .landing-text > h1 {
@@ -860,15 +847,12 @@ p{
     margin-bottom: 20px;
   }
   
-
   
   #btn {
     width: 200px;
     height:50px;
     font-size: 15px; 
-
   }
-  
   
   
   /*indhold website*/
@@ -879,10 +863,9 @@ p{
     "picture1 picture2 picture3"
     "picture4 picture5 picture6";
   }
-  
+  /*refence til hover effekt på billeder:https://jsfiddle.net/govdqd8y/?fbclid=IwAR1BoOpoAltaiEpImkwtt5fCxPaHkMXiWzqOTuw3DFlU4XlxnqSpmMZGmfM*/
   .image > div {
     position:relative;
-    
   }
   
   .img__description_layer {
@@ -907,7 +890,7 @@ p{
   .image > div:hover{
     cursor: pointer;
   }
-  
+
   .image > div .img__description {
     transition: .2s;
     transform: translateY(1em);
@@ -980,7 +963,7 @@ p{
 
   /*produkt.html*/
 
-  #portfolio_h ul a{
+  #portfolio_h ul a {
     font-size: 20px;
    
  }
